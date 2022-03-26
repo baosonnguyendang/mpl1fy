@@ -5,7 +5,8 @@ const Footer = (props: any) => {
   return (
     <div>
       <div className="footer-1">
-        <div className="footer-1-a">mplify</div>
+        <div className="footer-1-a">
+        </div>
         <div className="footer-1-b">
           <div className="logo li"></div>
           <div className="logo fb"></div>
