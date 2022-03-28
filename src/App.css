@@ -2,7 +2,101 @@
   text-align: center;
 } */
 
+body {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+/* header.tsx */
+.header {
+  display: flex;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-left {
+  flex: 4;
+}
+
+.header-right {
+  flex: 5;
+}
+
+.header-right > span {
+  margin-right: 50px;
+}
+
 /* main.tsx */
+
+.main-element {
+  margin-bottom: 30px;
+}
+
+/* main.tsx - who we are */
+.we {
+  display: flex;
+  gap: 30px;
+}
+
+.we > * {
+  flex: 1;
+}
+
+.we-img{
+  height: calc((80vw - 30px) / 698 * 450 / 2);
+  background-image: url('/src/img/who.png');
+  background-size: calc((80vw - 30px) / 2) calc((80vw - 30px) / 698 * 450 / 2);
+}
+
+/* main.tsx - core value */
+.value {
+  display: flex;
+  gap: 20px;
+}
+
+.value-element {
+  flex: 1;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+.value-element b {
+  text-transform: uppercase;
+}
+
+/* main.tsx - our product */
+.product {
+  position: relative;
+  height: calc(80vw * 543 / 1438);
+  background-image: url('/src/img/product.png');
+  background-size: 80vw calc(80vw * 543 / 1438);
+}
+
+.product-main {
+  text-align: center;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  padding: 40px 20px;
+  margin-right: 80px;
+}
+
+.product-main b {
+  font-size: 1.125rem;
+}
+
+#product-button {
+  margin-top: 30px;
+}
+
+/* main.tsx - contact */
 .contact {
   display: flex;
   column-gap: 15px;
@@ -14,6 +108,10 @@
 
 .contact > * {
   flex: 1;
+}
+
+.contact-info {
+  padding-top: 25px;
 }
 
 .contact-info > :first-child {
@@ -41,10 +139,7 @@
   position: relative;
 }
 
-#contact-button {
-  position: absolute;
-  bottom: 20px;
-  left: calc(50% - 50px);
+.button {
   width: 100px;
   background-color: rgb(92, 143, 247);
   border-radius: 7px;
@@ -53,7 +148,6 @@
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
@@ -61,17 +155,23 @@
   transition-duration: 0.4s;
 }
 
-#contact-button:hover {
+.button:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* header.tsx */
+#contact-button {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 50px);
+  display: inline-block;
+}
+
+/* footer.tsx */
 .footer-1 {
   display: flex;
   justify-content: center;
   column-gap: 20vw;
-  margin-bottom: 15px;
 }
 
 .footer-1-a {

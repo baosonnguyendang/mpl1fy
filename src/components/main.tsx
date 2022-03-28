@@ -15,11 +15,83 @@ const Main = (props: any) => {
     <div
       style={{
         backgroundColor: "rgba(93, 142, 247, 0.2)",
-        padding: "30px 50px",
-        margin: "20px 0",
+        padding: "30px 10vw",
       }}
     >
-      <div>
+      <div className="main-element">
+        <div className="we">
+          <div className="we-img"></div>
+          <div>
+            <h1 style={{textAlign: 'center'}}>Who we are?</h1>
+            <p>
+              Founded in 2019, we are inspired by helping people to be their
+              better version, and do what they love. With MPLIFY Vietnam, we
+              create digital solutions for people engagement that enables,
+              facilitates and maximizes people experience.
+            </p>
+            <p><b>What we can help?</b></p>
+            <ul>
+              <li>Smart event engagement solutions.</li>
+              <li>Self-customized smart event solution.</li>
+              <li>Integrated smart event solution into your current apps.</li>
+              <li>Events consulting and onsite support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="main-element">
+        <h1>Our Core Value</h1>
+        <div className="value">
+          <div className="value-element">
+            <p>
+              <b>courage</b>
+            </p>
+            <p>
+              We continuously strive for excellence, more innovate, and
+              sustainable solutions to maximize people experience and self
+              development.
+            </p>
+          </div>
+          <div className="value-element">
+            <p>
+              <b>simplicity</b>
+            </p>
+            <p>
+              We aim to provide an effortless, appealing product through
+              technology in various digital applications.
+            </p>
+          </div>
+          <div className="value-element">
+            <p>
+              <b>curiosity</b>
+            </p>
+            <p>
+              We aspire to look deeper in everything with compassion and
+              kindness in order to bring more values to people around us
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="main-element">
+        <h1>Our Products</h1>
+        <div className="product">
+          <div className="product-main">
+            <p>
+              <b>mplify Events. All-in-one events solution.</b>
+            </p>
+            <p>
+              mplify Events is all-in-one digital solution for events, that
+              makes all events easier, more attractive and engaging by
+              connecting and engaging people. It also creates an unique digital
+              event experience.
+            </p>
+            <button className="button" id="product-button">
+              More Info
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="main-element">
         <h1>Contact us</h1>
         <div className="contact">
           <div className="contact-info">
@@ -71,7 +143,12 @@ const Main = (props: any) => {
               <br />
               <TextField label="Your Message" variant="standard" fullWidth />
               <br />
-              <input type="submit" value="Submit" id="contact-button" />
+              <input
+                type="submit"
+                value="Submit"
+                className="button"
+                id="contact-button"
+              />
             </form>
           </div>
         </div>
