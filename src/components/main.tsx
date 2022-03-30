@@ -75,9 +75,10 @@ const Main = (props: any) => {
       <div className="main-element">
         <h1>Our Products</h1>
         <div className="product">
+          <div className='product-image'></div>
           <div className="product-main">
             <p>
-              <b>mplify Events. All-in-one events solution.</b>
+              <b></b>
             </p>
             <p>
               mplify Events is all-in-one digital solution for events, that

@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import { useLocation } from "react-router-dom";
+
 import PropTypes from "prop-types";
 
 const Header = (props: any) => {
   const [toggleOn, setToggleOn] = useState(false);
   const [lang, setLang] = useState("vi");
+  const url = useLocation();
 
   const toggle = (e: any) => {
     setToggleOn((toggleOn) => !toggleOn);
@@ -18,10 +22,12 @@ const Header = (props: any) => {
     <div className="header">
       <div className="header-left"></div>
       <div className="header-right">
-        <span>Home</span>
-        <span>About Us</span>
-        <span>Our Products</span>
-        <span>Contact Us</span>
+        <div className='header-menu'>
+          <span>Home</span>
+        </div>
+        <div className="header-menu">About Us</div>
+        <div className="header-menu">Our Products</div>
+        <div className="header-menu">Contact Us</div>
         <div className="header-select">
           <div onClick={toggle}>
             {lang === "vi" ? (
