@@ -13,22 +13,33 @@ h1 {
 /* header.tsx */
 .header {
   display: flex;
+  padding:0 5vw;
+  height: 54px;
+}
+
+#header-menu-icon {
+  transform: scale(1.5);
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  align-self: center;
 }
 
 .header-left {
-  flex: 4;
+  flex: 1;
 }
 
 .header-right {
-  flex: 5;
   display: flex;
   align-items: stretch;
+  justify-content: end;
+  flex: 0 0 500px;
 }
 
 .header-menu {
-  margin-right: 50px;
   position: relative;
   line-height: 54px;
+  margin-right: 3vw;
 }
 
 .header-menu::before {
@@ -47,7 +58,7 @@ h1 {
   transform: scaleX(1);
 }
 
-.header-menu-chosen {
+.chosen {
   font-weight: bold;
 }
 
@@ -129,9 +140,12 @@ h1 {
 }
 
 .we-img {
-  height: calc((80vw - 30px) / 698 * 450 / 2);
   background-image: url("/src/img/who.png");
-  background-size: calc((80vw - 30px) / 2) calc((80vw - 30px) / 698 * 450 / 2);
+  width: 100%;
+  height: 0;
+  padding-top: calc(450/698/2 *100%);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 }
 
 /* main.tsx - core value */
@@ -145,6 +159,7 @@ h1 {
   background-color: white;
   border-radius: 5px;
   padding: 20px 10px;
+  padding: 1vw 3vw;
 }
 
 .value-element b {
@@ -321,7 +336,30 @@ h1 {
   background-image: url("../src/img/instagram.svg");
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
+  .we {
+    flex-direction: column-reverse;
+  }
+  .we-img {
+    gap: 1.5rem;
+    padding-top: calc(450/698 *100%);
+  }
+  .value {
+    flex-direction: column;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 5vh;
+  }
+  .contact-message {
+    min-height: 320px;
+  }
+  .header-right > *:not(:first-child){
+    display: none;
+  }
+  #header-menu-icon {
+    display: block;
+  }
   .footer-1 {
     flex-direction: column;
   }
@@ -334,5 +372,17 @@ h1 {
   .footer-2 {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
   }
 }
+
+.header {
+  padding:0 5vw;
+  height: 54px;
+}
+
+.header-right{
+  justify-content: end;
+  flex: 0 0 500px;
+}
+

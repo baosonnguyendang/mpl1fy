@@ -15,7 +15,7 @@ const Main = (props: any) => {
     <div
       style={{
         backgroundColor: "rgba(93, 142, 247, 0.2)",
-        padding: "30px 10vw",
+        padding: "30px 5vw",
       }}
     >
       <div className="main-element">

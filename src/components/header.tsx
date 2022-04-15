@@ -4,10 +4,28 @@ import { useLocation } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
+import MenuIcon from '@mui/icons-material/Menu';
+
 const Header = (props: any) => {
   const [toggleOn, setToggleOn] = useState(false);
   const [lang, setLang] = useState("vi");
-  const url = useLocation();
+  var path = useLocation().pathname;
+
+  useEffect(() => {
+    switch(path){
+      case '/about':
+        document.getElementsByClassName('header-menu')[1].classList.add('chosen');
+        break;
+      case '/products':
+        document.getElementsByClassName('header-menu')[2].classList.add('chosen');
+        break;
+      case '/contact':
+        document.getElementsByClassName('header-menu')[3].classList.add('chosen');
+        break;
+      default:
+        document.getElementsByClassName('header-menu')[0].classList.add('chosen');
+    }
+  }, [])
 
   const toggle = (e: any) => {
     setToggleOn((toggleOn) => !toggleOn);
@@ -22,6 +40,7 @@ const Header = (props: any) => {
     <div className="header">
       <div className="header-left"></div>
       <div className="header-right">
+        <MenuIcon id="header-menu-icon"/>
         <div className='header-menu'>
           <span>Home</span>
         </div>
