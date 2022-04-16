@@ -33,13 +33,14 @@ h1 {
   display: flex;
   align-items: stretch;
   justify-content: end;
-  flex: 0 0 500px;
+  flex: 0 0 600px;
 }
 
 .header-menu {
   position: relative;
   line-height: 54px;
   margin-right: 3vw;
+  cursor: pointer;
 }
 
 .header-menu::before {
@@ -376,13 +377,4 @@ h1 {
   }
 }
 
-.header {
-  padding:0 5vw;
-  height: 54px;
-}
-
-.header-right{
-  justify-content: end;
-  flex: 0 0 500px;
-}
 
