@@ -4,6 +4,8 @@
 
 body {
   box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
 }
 
 h1 {
@@ -13,7 +15,7 @@ h1 {
 /* header.tsx */
 .header {
   display: flex;
-  padding:0 5vw;
+  padding: 0 5vw;
   height: 54px;
 }
 
@@ -130,6 +132,39 @@ h1 {
   margin-bottom: 30px;
 }
 
+.main-element:first-child {
+  background-image: url("img/Vector.png");
+  height: calc(100vh - 54px - 30px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  position: relative;
+}
+
+/* main.tsx - main slogan */
+.slogan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+}
+
+.slogan > h1 {
+  text-transform: uppercase;
+  color: black;
+  margin-top: 0;
+  font-size: 5rem;
+  margin-left: -5vw;
+}
+
+.slogan > h1:not(:first-child) {
+  margin-left: 5vw;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
 /* main.tsx - who we are */
 .we {
   display: flex;
@@ -144,7 +179,7 @@ h1 {
   background-image: url("/src/img/who.png");
   width: 100%;
   height: 0;
-  padding-top: calc(450/698/2 *100%);
+  padding-top: calc(450 / 698 / 2 * 100%);
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
@@ -165,6 +200,10 @@ h1 {
 
 .value-element b {
   text-transform: uppercase;
+}
+
+.value-element > img {
+  margin-top: 1em;
 }
 
 /* main.tsx - our product */
@@ -196,7 +235,7 @@ h1 {
   }
 
   .product-main b::before {
-    content: 'mplify Events. All-in-one events solution.';
+    content: "mplify Events. All-in-one events solution.";
   }
 }
 
@@ -214,7 +253,7 @@ h1 {
   }
 
   .product-main b::before {
-    content: 'engaging people, making difference';
+    content: "engaging people, making difference";
     text-transform: uppercase;
   }
 }
@@ -295,18 +334,16 @@ h1 {
 }
 
 /* footer.tsx */
+
 .footer-1 {
   display: flex;
   justify-content: center;
   column-gap: 20vw;
+  margin: 2vh 0;
 }
 
 .footer-1-a {
   align-self: center;
-  background-image: url("img/logo.png");
-  background-size: 200px 200px;
-  height: 200px;
-  width: 200px;
 }
 
 .footer-1-b {
@@ -317,6 +354,7 @@ h1 {
 .footer-2 {
   text-align: center;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .logo {
@@ -338,12 +376,24 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
+  .header-right {
+    flex: 1;
+  }
+  .slogan {
+    width: auto;
+  }
+  .slogan > h1, .slogan > h1:not(:first-child) {
+    margin-left: 0;
+  }
+  .main-element:last-child {
+    margin-bottom: 0;
+  }
   .we {
     flex-direction: column-reverse;
   }
   .we-img {
     gap: 1.5rem;
-    padding-top: calc(450/698 *100%);
+    padding-top: calc(450 / 698 * 100%);
   }
   .value {
     flex-direction: column;
@@ -355,7 +405,7 @@ h1 {
   .contact-message {
     min-height: 320px;
   }
-  .header-right > *:not(:first-child){
+  .header-right > *:not(:first-child) {
     display: none;
   }
   #header-menu-icon {
@@ -363,6 +413,7 @@ h1 {
   }
   .footer-1 {
     flex-direction: column;
+    gap: 10px;
   }
 
   .footer-1-b {
@@ -376,5 +427,4 @@ h1 {
     margin-top: 20px;
   }
 }
-
 

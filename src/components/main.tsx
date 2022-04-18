@@ -8,28 +8,47 @@ import CallIcon from "@mui/icons-material/Call";
 import MailIcon from "@mui/icons-material/Mail";
 import RoomIcon from "@mui/icons-material/Room";
 
+import vector1 from "../img/Vector1.png";
+import vector2 from "../img/Vector2.png";
+import vector3 from "../img/Vector3.png";
+import vector4 from "../img/Vector4.png";
+import curiosity from "../img/curiosity.png";
+import easy from "../img/easy.png";
+import passion from "../img/passion.png";
+
 const Main = (props: any) => {
   const key = "AIzaSyCsxhaM3-9si1YOfppMVlPAn3Wp1Rs7r-s";
 
   return (
     <div
       style={{
-        backgroundColor: "rgba(93, 142, 247, 0.2)",
-        padding: "30px 5vw",
+        backgroundColor: "rgba(144, 205, 248, 0.2)",
+        padding: "30px 10vw",
+        backgroundImage: `url(${vector3}), url(${vector4})`,
+        backgroundPosition: "0 35vh, 100% 101%",
+        backgroundRepeat: "no-repeat, no-repeat",
       }}
     >
+      <div className="main-element">
+        <div className="slogan">
+          <h1>engaging people,</h1>
+          <h1>making difference</h1>
+        </div>
+      </div>
       <div className="main-element">
         <div className="we">
           <div className="we-img"></div>
           <div>
-            <h1 style={{textAlign: 'center'}}>Who we are?</h1>
+            <h1 style={{ textAlign: "center" }}>Who we are?</h1>
             <p>
               Founded in 2019, we are inspired by helping people to be their
               better version, and do what they love. With MPLIFY Vietnam, we
               create digital solutions for people engagement that enables,
               facilitates and maximizes people experience.
             </p>
-            <p><b>What we can help?</b></p>
+            <p>
+              <b>What we can help?</b>
+            </p>
             <ul>
               <li>Smart event engagement solutions.</li>
               <li>Self-customized smart event solution.</li>
@@ -43,6 +62,7 @@ const Main = (props: any) => {
         <h1>Our Core Value</h1>
         <div className="value">
           <div className="value-element">
+            <img src={passion} alt="passion" />
             <p>
               <b>courage</b>
             </p>
@@ -53,6 +73,7 @@ const Main = (props: any) => {
             </p>
           </div>
           <div className="value-element">
+            <img src={easy} alt="easy" />
             <p>
               <b>simplicity</b>
             </p>
@@ -62,6 +83,7 @@ const Main = (props: any) => {
             </p>
           </div>
           <div className="value-element">
+            <img src={curiosity} alt="curiosity" />
             <p>
               <b>curiosity</b>
             </p>
@@ -75,7 +97,7 @@ const Main = (props: any) => {
       <div className="main-element">
         <h1>Our Products</h1>
         <div className="product">
-          <div className='product-image'></div>
+          <div className="product-image"></div>
           <div className="product-main">
             <p>
               <b></b>
