@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 import Map from "./map";
@@ -15,27 +15,59 @@ import vector4 from "../img/Vector4.png";
 import curiosity from "../img/curiosity.png";
 import easy from "../img/easy.png";
 import passion from "../img/passion.png";
+import arrow from "../img/Vectorr.png"
 
 const Main = (props: any) => {
   const key = "AIzaSyCsxhaM3-9si1YOfppMVlPAn3Wp1Rs7r-s";
+
+  const addScroll = (input: string) => {
+    document.getElementById(input)!.addEventListener("click", () => {
+      //scroll to each part when click to menu bar
+      const element = document.getElementById(input.substring(5));
+      const offset = 70;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element!.getBoundingClientRect().top;
+      console.log(bodyRect, elementRect);
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      //the code below is to highlight menu bar
+      document.getElementsByClassName("chosen")[0].classList.remove("chosen");
+      document.getElementById(input)!.classList.add("chosen");
+    });
+  };
+
+  useEffect(() => {
+    Array.from(document.getElementsByClassName("header-menu")).forEach(
+      (element: Element) => addScroll(element.id)
+    );
+  }, []);
 
   return (
     <div
       style={{
         backgroundColor: "rgba(144, 205, 248, 0.2)",
-        padding: "30px 10vw",
         backgroundImage: `url(${vector3}), url(${vector4})`,
         backgroundPosition: "0 35vh, 100% 101%",
         backgroundRepeat: "no-repeat, no-repeat",
       }}
+      className='main'
     >
-      <div className="main-element">
+      <div className="main-element" id="home">
+        <img src={arrow} alt='arrow' />
         <div className="slogan">
           <h1>engaging people,</h1>
           <h1>making difference</h1>
         </div>
+        <img src={vector2} alt='vector2' id="round-image" />
+        <img src={arrow} alt='arrow-down' id="arrow-image" />
       </div>
-      <div className="main-element">
+      <div className="main-element" id="we">
         <div className="we">
           <div className="we-img"></div>
           <div>
@@ -94,7 +126,7 @@ const Main = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="main-element">
+      <div className="main-element" id="product">
         <h1>Our Products</h1>
         <div className="product">
           <div className="product-image"></div>
@@ -114,7 +146,7 @@ const Main = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="main-element">
+      <div className="main-element" id="contact">
         <h1>Contact us</h1>
         <div className="contact">
           <div className="contact-info">

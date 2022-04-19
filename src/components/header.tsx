@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import { useLocation } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
+
+import logo from "../img/logo_mplify_vietnam-blue.png";
 
 const Header = (props: any) => {
   const [toggleOn, setToggleOn] = useState(false);
@@ -12,20 +13,22 @@ const Header = (props: any) => {
   var path = useLocation().pathname;
 
   useEffect(() => {
-    switch(path){
-      case '/about':
-        document.getElementsByClassName('header-menu')[1].classList.add('chosen');
-        break;
-      case '/products':
-        document.getElementsByClassName('header-menu')[2].classList.add('chosen');
-        break;
-      case '/contact':
-        document.getElementsByClassName('header-menu')[3].classList.add('chosen');
-        break;
+    switch (path) {
+      // case '/about':
+      //   document.getElementsByClassName('header-menu')[1].classList.add('chosen');
+      //   break;
+      // case '/products':
+      //   document.getElementsByClassName('header-menu')[2].classList.add('chosen');
+      //   break;
+      // case '/contact':
+      //   document.getElementsByClassName('header-menu')[3].classList.add('chosen');
+      //   break;
       default:
-        document.getElementsByClassName('header-menu')[0].classList.add('chosen');
+        document
+          .getElementsByClassName("header-menu")[0]
+          .classList.add("chosen");
     }
-  }, [])
+  }, []);
 
   const toggle = (e: any) => {
     setToggleOn((toggleOn) => !toggleOn);
@@ -38,15 +41,23 @@ const Header = (props: any) => {
 
   return (
     <div className="header">
-      <div className="header-left"></div>
+      <div className="header-left">
+        <img src={logo} alt="logo" />
+      </div>
+      <MenuIcon id="header-menu-icon" />
       <div className="header-right">
-        <MenuIcon id="header-menu-icon"/>
-        <div className='header-menu'>
+        <div className="header-menu" id="menu-home">
           <span>Home</span>
         </div>
-        <div className="header-menu">About Us</div>
-        <div className="header-menu">Our Products</div>
-        <div className="header-menu">Contact Us</div>
+        <div className="header-menu" id="menu-we">
+          About Us
+        </div>
+        <div className="header-menu" id="menu-product">
+          Our Products
+        </div>
+        <div className="header-menu" id="menu-contact">
+          Contact Us
+        </div>
         <div className="header-select">
           <div onClick={toggle}>
             {lang === "vi" ? (
