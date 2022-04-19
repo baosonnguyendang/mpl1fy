@@ -1,0 +1,430 @@
+/* .App {
+  text-align: center;
+} */
+
+body {
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+/* header.tsx */
+.header {
+  display: flex;
+  padding: 0 5vw;
+  height: 54px;
+}
+
+#header-menu-icon {
+  transform: scale(1.5);
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: stretch;
+  justify-content: end;
+  flex: 0 0 600px;
+}
+
+.header-menu {
+  position: relative;
+  line-height: 54px;
+  margin-right: 3vw;
+  cursor: pointer;
+}
+
+.header-menu::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.header-menu:hover::before {
+  transform: scaleX(1);
+}
+
+.chosen {
+  font-weight: bold;
+}
+
+.header-select {
+  position: relative;
+  border: 2px solid rgba(92, 143, 247, 0.8);
+  border-radius: 5px;
+  padding-right: 2px;
+  margin: 5px 0;
+}
+
+.header-select > :first-child {
+  display: flex;
+  width: 70px;
+  height: 40px;
+  align-items: center;
+}
+
+.header-select svg {
+  height: 20px;
+  width: 50px;
+}
+
+.header-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 2px;
+}
+
+.header-options > div {
+  display: flex;
+  cursor: pointer;
+  width: 70px;
+  height: 40px;
+  align-items: center;
+  background-color: white;
+  padding-right: 2px;
+}
+
+.header-options > div:hover {
+  background-color: wheat;
+}
+
+.header-options span {
+  font-size: 14px;
+  color: grey;
+  width: 0.45rem;
+  margin-left: -4px;
+}
+
+.chevron::before {
+  border-style: solid;
+  border-width: 0.15rem 0.15rem 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45rem;
+  left: 0.15rem;
+  top: 0.15rem;
+  vertical-align: top;
+  width: 0.45rem;
+  transform: translate(-1px, 3px) rotate(135deg);
+}
+
+/* main.tsx */
+
+.main-element {
+  margin-bottom: 30px;
+}
+
+.main-element:first-child {
+  background-image: url("img/Vector.png");
+  height: calc(100vh - 54px - 30px);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  position: relative;
+}
+
+/* main.tsx - main slogan */
+.slogan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+}
+
+.slogan > h1 {
+  text-transform: uppercase;
+  color: black;
+  margin-top: 0;
+  font-size: 5rem;
+  margin-left: -5vw;
+}
+
+.slogan > h1:not(:first-child) {
+  margin-left: 5vw;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
+/* main.tsx - who we are */
+.we {
+  display: flex;
+  gap: 30px;
+}
+
+.we > * {
+  flex: 1;
+}
+
+.we-img {
+  background-image: url("/src/img/who.png");
+  width: 100%;
+  height: 0;
+  padding-top: calc(450 / 698 / 2 * 100%);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+/* main.tsx - core value */
+.value {
+  display: flex;
+  gap: 20px;
+}
+
+.value-element {
+  flex: 1;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 10px;
+  padding: 1vw 3vw;
+}
+
+.value-element b {
+  text-transform: uppercase;
+}
+
+.value-element > img {
+  margin-top: 1em;
+}
+
+/* main.tsx - our product */
+.product {
+  position: relative;
+}
+
+.product-image {
+  height: calc(80vw * 543 / 1438);
+  background-image: url("/src/img/product.png");
+  background-size: 80vw calc(80vw * 543 / 1438);
+}
+
+@media screen and (min-width: 1024px) {
+  .product-main {
+    text-align: center;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    padding: 2.5vw 1.5vw;
+    margin-right: 5%;
+  }
+
+  .product-main b {
+    font-size: 1.125rem;
+  }
+
+  .product-main b::before {
+    content: "mplify Events. All-in-one events solution.";
+  }
+}
+
+@media screen and (max-width: 1023.9px) {
+  .product {
+    text-align: center;
+  }
+
+  .product-main {
+    margin-top: 30px;
+  }
+
+  .product-main b {
+    font-size: 1.125rem;
+  }
+
+  .product-main b::before {
+    content: "engaging people, making difference";
+    text-transform: uppercase;
+  }
+}
+
+#product-button {
+  margin-top: 1.5vw;
+}
+
+/* main.tsx - contact */
+.contact {
+  display: flex;
+  column-gap: 15px;
+}
+
+.contact b {
+  font-size: 22px;
+}
+
+.contact > * {
+  flex: 1;
+}
+
+.contact-info {
+  padding-top: 25px;
+}
+
+.contact-info > :first-child {
+  margin-left: 15px;
+}
+
+.contact-info-data {
+  margin: 25px 0;
+  display: flex;
+}
+
+.contact-info-data > :first-child {
+  width: 50px;
+  justify-self: center;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.contact-message {
+  background-color: white;
+  padding: 10px 25px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.button {
+  width: 100px;
+  background-color: rgb(92, 143, 247);
+  border-radius: 7px;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#contact-button {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 50px);
+  display: inline-block;
+}
+
+/* footer.tsx */
+
+.footer-1 {
+  display: flex;
+  justify-content: center;
+  column-gap: 20vw;
+  margin: 2vh 0;
+}
+
+.footer-1-a {
+  align-self: center;
+}
+
+.footer-1-b {
+  display: flex;
+  align-self: center;
+}
+
+.footer-2 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+
+.logo.li {
+  background-image: url("../src/img/linkedin.svg");
+}
+
+.logo.fb {
+  margin: 0 10px;
+  background-image: url("../src/img/facebook.svg");
+}
+
+.logo.in {
+  background-image: url("../src/img/instagram.svg");
+}
+
+@media screen and (max-width: 768px) {
+  .header-right {
+    flex: 1;
+  }
+  .slogan {
+    width: auto;
+  }
+  .slogan > h1, .slogan > h1:not(:first-child) {
+    margin-left: 0;
+  }
+  .main-element:last-child {
+    margin-bottom: 0;
+  }
+  .we {
+    flex-direction: column-reverse;
+  }
+  .we-img {
+    gap: 1.5rem;
+    padding-top: calc(450 / 698 * 100%);
+  }
+  .value {
+    flex-direction: column;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 5vh;
+  }
+  .contact-message {
+    min-height: 320px;
+  }
+  .header-right > *:not(:first-child) {
+    display: none;
+  }
+  #header-menu-icon {
+    display: block;
+  }
+  .footer-1 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-1-b {
+    margin-top: 10px;
+    align-self: center;
+  }
+
+  .footer-2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
