@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useState } from 'react';
-import  Axios  from 'axios';
+import { useState } from "react";
+import Axios from "axios";
 import Map from "./map";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 import TextField from "@mui/material/TextField";
 import CallIcon from "@mui/icons-material/Call";
@@ -17,31 +17,27 @@ import vector4 from "../img/Vector4.png";
 import curiosity from "../img/curiosity.png";
 import easy from "../img/easy.png";
 import passion from "../img/passion.png";
-import arrow from "../img/Vectorr.png"
+import arrow from "../img/Vectorr.png";
 
 const Main = (props: any) => {
   const key = "AIzaSyCsxhaM3-9si1YOfppMVlPAn3Wp1Rs7r-s";
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const submitHandler = async (e: any) => { // e --> event
-    e.preventDefault()
+  const submitHandler = async (e: any) => {
+    // e --> event
+    e.preventDefault();
 
     try {
-      const {data} = await Axios.post('/api', {
-        name,
-        email,
-        message
-      })
-      console.log(data)
+      const { data } = await Axios.post("/api", { name, email, message, });
+      console.log(data);
       swal("Successfully sent information!", "Thanks a lot!", "success");
-    }catch (err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
     }
-
-  }
+  };
 
   const addScroll = (input: string) => {
     document.getElementById(input)!.addEventListener("click", () => {
@@ -60,8 +56,6 @@ const Main = (props: any) => {
       });
 
       //the code below is to highlight menu bar
-      document.getElementsByClassName("chosen")[0].classList.remove("chosen");
-      document.getElementById(input)!.classList.add("chosen");
     });
   };
 
@@ -79,16 +73,16 @@ const Main = (props: any) => {
         backgroundPosition: "0 35vh, 100% 101%",
         backgroundRepeat: "no-repeat, no-repeat",
       }}
-      className='main'
+      className="main"
     >
       <div className="main-element" id="home">
-        <img src={arrow} alt='arrow' />
+        <img src={arrow} alt="arrow" />
         <div className="slogan">
           <h1>engaging people,</h1>
           <h1>making difference</h1>
         </div>
-        <img src={vector2} alt='vector2' id="round-image" />
-        <img src={arrow} alt='arrow-down' id="arrow-image" />
+        <img src={vector2} alt="vector2" id="round-image" />
+        <img src={arrow} alt="arrow-down" id="arrow-image" />
       </div>
       <div className="main-element" id="we">
         <div className="we">
@@ -210,7 +204,12 @@ const Main = (props: any) => {
               <b>Leave a message</b>
             </p>
             <form onSubmit={submitHandler}>
-              <TextField label="Full Name" variant="standard" fullWidth onChange={(e) => setName(e.target.value)}/>
+              <TextField
+                label="Full Name"
+                variant="standard"
+                fullWidth
+                onChange={(e) => setName(e.target.value)}
+              />
               <br />
               <TextField
                 label="Your Email"
@@ -220,7 +219,12 @@ const Main = (props: any) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
               <br />
-              <TextField label="Your Message" variant="standard" fullWidth onChange={(e) => setMessage(e.target.value)}/>
+              <TextField
+                label="Your Message"
+                variant="standard"
+                fullWidth
+                onChange={(e) => setMessage(e.target.value)}
+              />
               <br />
               <input
                 type="submit"
