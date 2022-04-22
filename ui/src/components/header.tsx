@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-
 import { useLocation } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
+
+import logo from "../img/logo_mplify_vietnam-blue.png";
+import { SettingsPowerRounded } from "@mui/icons-material";
 
 const Header = (props: any) => {
   const [toggleOn, setToggleOn] = useState(false);
@@ -12,7 +14,7 @@ const Header = (props: any) => {
   var path = useLocation().pathname;
 
   useEffect(() => {
-    switch(path){
+    switch (path) {
       case '/about':
         document.getElementsByClassName('header-menu')[1].classList.add('chosen');
         break;
@@ -23,9 +25,39 @@ const Header = (props: any) => {
         document.getElementsByClassName('header-menu')[3].classList.add('chosen');
         break;
       default:
-        document.getElementsByClassName('header-menu')[0].classList.add('chosen');
+        document
+          .getElementsByClassName("header-menu")[0]
+          .classList.add("chosen");
     }
-  }, [])
+    let scrollPos = window.scrollY
+    const height1 = document.getElementById("we")!.getBoundingClientRect().top + scrollPos -71
+    const height2 = document.getElementById("product")!.getBoundingClientRect().top + scrollPos -71
+    const height3 = document.getElementById("contact")!.getBoundingClientRect().top + scrollPos -71
+    window.addEventListener('scroll', function(){
+      const scrollPos = this.window.scrollY
+      document.getElementsByClassName("chosen")[0].classList.remove("chosen")
+      if (scrollPos >= height1 && scrollPos <height2){
+        document.getElementById("menu-we")!.classList.add("chosen")
+      }else if(scrollPos >= height2 && scrollPos <height3){
+        document.getElementById("menu-product")!.classList.add("chosen")
+      }else if(scrollPos >= height3){
+        document.getElementById("menu-contact")!.classList.add("chosen")
+      }else{
+        document.getElementById("menu-home")!.classList.add("chosen")
+      }
+    })
+  }, []);
+  const [open, setOpen] = useState<boolean>(false)
+  const triggerMenuOpen = ()=>{
+    setOpen(open => !open)
+  }
+  useEffect(()=>{
+    if(open){
+      document.querySelector('.header-right')!.classList.add("header-menu-mobile")
+    }else{
+      document.querySelector('.header-right')!.classList.remove('header-menu-mobile')
+    }
+  },[open])
 
   const toggle = (e: any) => {
     setToggleOn((toggleOn) => !toggleOn);
@@ -38,15 +70,23 @@ const Header = (props: any) => {
 
   return (
     <div className="header">
-      <div className="header-left"></div>
+      <div className="header-left">
+        <img src={logo} alt="logo" />
+      </div>
+      <MenuIcon id="header-menu-icon" onClick ={()=> triggerMenuOpen()} />
       <div className="header-right">
-        <MenuIcon id="header-menu-icon"/>
-        <div className='header-menu' id="home">
+        <div className="header-menu" id="menu-home">
           <span>Home</span>
         </div>
-        <a className="header-menu" href="#we">About Us</a>
-        <div className="header-menu" id="product">Our Products</div>
-        <div className="header-menu" id="contact">Contact Us</div>
+        <div className="header-menu" id="menu-we">
+          About Us
+        </div>
+        <div className="header-menu" id="menu-product">
+          Our Products
+        </div>
+        <div className="header-menu" id="menu-contact">
+          Contact Us
+        </div>
         <div className="header-select">
           <div onClick={toggle}>
             {lang === "vi" ? (
