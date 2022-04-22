@@ -8,7 +8,7 @@ import { generateToken } from '../utils.js'
 const dataRouter = express.Router()
 
 dataRouter.post(
-    '/', expressAsyncHandler(async (req, res)=>{
+    '/', expressAsyncHandler(async (req, res) => {
         const newData = new Data({
             name: req.body.name,
             email: req.body.email,

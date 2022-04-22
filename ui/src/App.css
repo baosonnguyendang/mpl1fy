@@ -32,7 +32,7 @@ h1 {
   align-self: center;
 }
 
-.header-left > img {
+.header-left>img {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -81,7 +81,7 @@ h1 {
   margin: 13px 0;
 }
 
-.header-select > :first-child {
+.header-select> :first-child {
   display: flex;
   width: 70px;
   height: 40px;
@@ -100,7 +100,7 @@ h1 {
   margin-top: 2px;
 }
 
-.header-options > div {
+.header-options>div {
   display: flex;
   cursor: pointer;
   width: 70px;
@@ -110,7 +110,7 @@ h1 {
   padding-right: 2px;
 }
 
-.header-options > div:hover {
+.header-options>div:hover {
   background-color: wheat;
 }
 
@@ -154,7 +154,7 @@ h1 {
 }
 
 /* main.tsx - main slogan */
-#home > img:first-child {
+#home>img:first-child {
   position: absolute;
   right: 20vw;
   top: 5vh;
@@ -178,14 +178,14 @@ h1 {
   width: max-content;
 }
 
-.slogan > h1 {
+.slogan>h1 {
   text-transform: uppercase;
   color: black;
   margin-top: 0;
   font-size: 4.8rem;
 }
 
-.slogan > h1:not(:first-child) {
+.slogan>h1:not(:first-child) {
   margin-left: 8vw;
   -webkit-text-fill-color: white;
   -webkit-text-stroke-color: black;
@@ -202,7 +202,7 @@ h1 {
   gap: 30px;
 }
 
-.we > * {
+.we>* {
   flex: 1;
 }
 
@@ -233,7 +233,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.value-element > img {
+.value-element>img {
   margin-top: 1em;
 }
 
@@ -262,7 +262,7 @@ h1 {
   font-size: 22px;
 }
 
-.contact > * {
+.contact>* {
   flex: 1;
 }
 
@@ -270,7 +270,7 @@ h1 {
   padding-top: 25px;
 }
 
-.contact-info > :first-child {
+.contact-info> :first-child {
   margin-left: 15px;
 }
 
@@ -279,7 +279,7 @@ h1 {
   display: flex;
 }
 
-.contact-info-data > :first-child {
+.contact-info-data> :first-child {
   width: 50px;
   justify-self: center;
 }
@@ -307,7 +307,8 @@ h1 {
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
   transition-duration: 0.4s;
 }
 
@@ -396,7 +397,7 @@ h1 {
     padding: 0 5vw 30px 5vw;
   }
 
-  .slogan > h1 {
+  .slogan>h1 {
     font-size: calc(100vw / 14);
   }
 
@@ -404,7 +405,8 @@ h1 {
     margin: 0;
   }
 
-  .we p, .we ul {
+  .we p,
+  .we ul {
     margin: 0.5em 0;
   }
 
@@ -430,56 +432,71 @@ h1 {
   .header {
     justify-content: center;
   }
+
   .header-right {
     display: none;
   }
+
   #header-menu-icon {
     display: block;
     position: absolute;
     right: 3vw;
   }
+
   .main {
     padding: 0 3vw 30px 3vw;
   }
+
   .slogan {
     width: auto;
   }
-  .slogan > h1 {
+
+  .slogan>h1 {
     font-size: 4rem;
   }
-  .slogan > h1:not(:first-child) {
+
+  .slogan>h1:not(:first-child) {
     margin-left: 0;
   }
+
   #round-image {
     display: none;
   }
+
   #arrow-image {
-    display: block;  
+    display: block;
     position: absolute;
     right: 0;
     top: calc(100vh - 150px);
     transform: rotate(90deg);
   }
+
   .main-element:last-child {
     margin-bottom: 0;
   }
+
   .we {
     flex-direction: column-reverse;
   }
+
   .we-img {
     gap: 1.5rem;
     padding-top: calc(450 / 698 * 100%);
   }
+
   .value {
     flex-direction: column;
   }
+
   .contact {
     flex-direction: column;
     gap: 5vh;
   }
+
   .contact-message {
     min-height: 320px;
   }
+
   .footer-1 {
     flex-direction: column;
     gap: 10px;
@@ -497,7 +514,7 @@ h1 {
   }
 }
 
-.chosen::before{
+.chosen::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -508,23 +525,25 @@ h1 {
   transform: scaleX(1);
 }
 
-.header{
+.header {
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.19);
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media screen and(max-width:768px) {
-  .main{
+@media screen and (max-width:768px) {
+  .main {
     background-size: 50%, 50%;
   }
 
-  #we :not(h1){
+  #we :not(h1) {
     font-size: 1.125rem;
   }
-  .header-right{
+
+  .header-right {
     display: none;
   }
-  .header-menu-mobile{
+
+  .header-menu-mobile {
     display: flex;
     position: fixed;
     top: 71px;
@@ -537,12 +556,14 @@ h1 {
     padding: 0 5vw;
     animation: slide 0.5s forwards;
   }
-  @keyframes slide{
+
+  @keyframes slide {
     100% {
       right: 0;
     }
   }
-  .header-right>:last-child{
+
+  .header-right>:last-child {
     width: 72px;
   }
 }
