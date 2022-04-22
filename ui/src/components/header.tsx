@@ -32,7 +32,7 @@ const Header = (props: any) => {
     const height2 = document.getElementById("product")!.getBoundingClientRect().top + scrollPos - 71;
     const height3 = document.getElementById("contact")!.getBoundingClientRect().top + scrollPos - 71;
     window.addEventListener("scroll", function () {
-      console.log(scrollPos, height1, height2, height3);
+      const scrollPos = this.window.scrollY;
       document.getElementsByClassName("chosen")[0].classList.remove("chosen");
       if (scrollPos >= height1 && scrollPos < height2) {
         document.getElementById("menu-we")!.classList.add("chosen");

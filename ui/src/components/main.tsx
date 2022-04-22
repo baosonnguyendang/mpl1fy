@@ -54,8 +54,6 @@ const Main = (props: any) => {
         top: offsetPosition,
         behavior: "smooth",
       });
-
-      //the code below is to highlight menu bar
     });
   };
 
